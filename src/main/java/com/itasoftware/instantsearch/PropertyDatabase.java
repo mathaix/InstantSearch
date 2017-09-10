@@ -9,9 +9,8 @@ import org.springframework.stereotype.Component;
 @Component
 public class PropertyDatabase {
 	
-	//TST<HashSet<Integer>> prop_trie = new TST<HashSet<Integer>>();
-	TST<NrhpProperty> prop_trie = new TST<NrhpProperty>();
-	HashMap<Integer,NrhpProperty> prop_map = new HashMap<Integer,NrhpProperty>();
+	TST<String> prop_trie = new TST<String>();
+	HashMap<String,HashSet<NrhpProperty>> prop_map = new HashMap<String,HashSet<NrhpProperty>>();
 	
 	public PropertyDatabase(){
 		
@@ -19,7 +18,6 @@ public class PropertyDatabase {
 	
 	public void add(NrhpProperty p)
 	{
-		prop_map.put(p.getId(), p);
 		add(p.getAddress(), p);
 		add(p.getCity(), p);
 		add(p.getState(), p);
@@ -33,43 +31,38 @@ public class PropertyDatabase {
 		if (text == null) return;
 		String s = text.toLowerCase();
 		
-		addHelper(s, p);
+		prop_trie.put(s, s);
 		
 		//add substrings
 		int len = s.length();
 		for (int i=1; i<len; i++) {
-			addHelper(s.substring(i, len), p);
+			prop_trie.put(s.substring(i, len), s);
 		}
-	}
-	
-	private void addHelper(String text, NrhpProperty p) {
-		prop_trie.put(text, p);
-		/*HashSet<Integer> set = prop_trie.get(text);
-		if (set == null) {
-			set = new HashSet<Integer>();
-			set.add(p.getId());
-			prop_trie.put(text, set);
+		
+		HashSet<NrhpProperty> map = prop_map.get(s);
+		if (map == null)
+		{
+			map = new HashSet<NrhpProperty>();
+			map.add(p);
+			prop_map.put(s, map);
 		}
-		if (set.size() < 10) return;
-		set.add(p.getId());
-		*/
+		else {
+			map.add(p);
+		}
 	}
 	
 	public List<NrhpProperty> search(String text){
 		String s = text.toLowerCase();
 		HashSet<NrhpProperty> set = new HashSet<NrhpProperty>();
 		
-		for( String key : prop_trie.keysWithPrefix(s)){
-			set.add(prop_trie.get(key));
+		for(String key : prop_trie.keysWithPrefix(s)){
+		   for(NrhpProperty p: prop_map.get(prop_trie.get(key))){
+				set.add(p);	
+				if (set.size() > 100) break;
+			}
 			if (set.size() > 100) break;
 		}
-		
-		/*for( String key : prop_trie.keysWithPrefix(s)){
-			for(Integer p:  prop_trie.get(key)){
-				set.add(prop_map.get(p));
-			}
-		}*/
-		
+	
 		return new ArrayList<NrhpProperty>(set);
 	}
 }
