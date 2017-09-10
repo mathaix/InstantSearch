@@ -1,7 +1,7 @@
 # InstantSearch
 This application demos how to build an Autocomplete/Search Solution. 
 Key to this solution is making use of Tenary Search Tree to efficiently store data and do fast prefix string searches (https://en.wikipedia.org/wiki/Ternary_search_tree)
-(This was built as a solution to an ITASoftware hiring puzzle)
+(This was built as a solution to an ITASoftware hiring puzzle https://github.com/mathaix/InstantSearch/wiki/Problem-Description---Instant-Search.)
 
 The current solution consists of the following components. 
 
