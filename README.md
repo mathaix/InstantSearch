@@ -1,7 +1,7 @@
 # InstantSearch
-This application demos how to build an Autocomplete/Search Solution. 
+This application demos how to build an Autocomplete/Search Solution.
 
-### Context 
+### Context
 ITA Software now part of Google are well knownfor their tough Hiring puzzles. This was built as a solution to the problem below
 
 #### Problem Description:
@@ -14,15 +14,18 @@ Database The key component of your server-side application is an efficient, in-m
 Key to this solution is making use of Tenary Search Tree to efficiently store data and do fast prefix string searches (https://en.wikipedia.org/wiki/Ternary_search_tree)
 
 ### Components
-The solution is made up of the following components. 
+The solution is made up of the following components.
 
 1. SearchRest Interface: Built using SpringBoot and Spring MVC
-2. SearchDatabase: Implemented with a Tenary Search Tree and a HashMap. 
+2. SearchDatabase: Implemented with a Tenary Search Tree and a HashMap.
 3. WebInterface: Built with React
 
 ### Building and Running
 1. Clone repository
-2. cd into folder. 
+2. cd into folder.
 3. Run ./mvnw spring-boot:run
-4. Navigate to http://localhost:8080 
+4. Navigate to http://localhost:8080
 5. Make Searches: eg "Bos", "Rhode Island" etc
+
+### SearchPage
+![searchpage](InstantSearch.png)
