@@ -1,9 +1,8 @@
 # InstantSearch
 This application demos how to build an Autocomplete/Search Solution. 
-It was initially built as a solution to one of ITA Softwares Hiring puzzles.
 
 ### Context 
-ITA Software now part of Google are well knownfor their tough Hiring puzzles. This is probably one of the easier puzzles on their site.
+ITA Software now part of Google are well knownfor their tough Hiring puzzles. This was built as a solution to the problem below
 
 #### Problem Description:
 
@@ -15,7 +14,7 @@ Database The key component of your server-side application is an efficient, in-m
 Key to this solution is making use of Tenary Search Tree to efficiently store data and do fast prefix string searches (https://en.wikipedia.org/wiki/Ternary_search_tree)
 
 ### Components
-The current solution consists of the following components. 
+The solution is made up of the following components. 
 
 1. SearchRest Interface: Built using SpringBoot and Spring MVC
 2. SearchDatabase: Implemented with a Tenary Search Tree and a HashMap. 
