@@ -10,7 +10,7 @@ Write a Java web application which provides "instant search" over properties lis
 
 Database The key component of your server-side application is an efficient, in-memory data structure for looking up properties (written in pure Java). A good solution may take several minutes to load, but can answer a query in well under 0.1 ms on a modern PC. (Note that a sequential search of all properties is probably too slow!) An input matches a property if it is found at any position within that property's names, address, or city+state. Matches are case-insensitive, and consider only the characters A-Z and 0-9, e.g. the input "mainst" matches "200 S Main St" and "red" matches "Lakeshore Dr." Note that the server's JVM will be configured with 1024M maximum heap space.
 
-### Implementation
+### Solution
 Key to this solution is making use of Tenary Search Tree to efficiently store data and do fast prefix string searches (https://en.wikipedia.org/wiki/Ternary_search_tree)
 
 ### Components
