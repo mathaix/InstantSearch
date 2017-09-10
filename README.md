@@ -2,7 +2,7 @@
 This application demos how to build an Autocomplete/Search Solution.
 
 ### Context
-ITA Software now part of Google are well knownfor their tough Hiring puzzles. This was built as a solution to the problem below
+ITA Software now part of Google are well known for their tough Hiring puzzles. This was built as a solution to the problem below
 
 #### Problem Description:
 
