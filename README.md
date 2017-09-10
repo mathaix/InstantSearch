@@ -21,15 +21,12 @@ The solution is made up of the following components.
 3. WebInterface: Built with React
 
 ### Building and Running
-#### Prequistes
-Java 1.8
-Maven
-
-1. Clone repository
-2. cd into folder.
-3. Run ./mvnw spring-boot:run
-4. Navigate to http://localhost:8080
-5. Make Searches: eg "Bos", "Rhode Island" etc
+* Install Prequistes if not already installed (Java 1.8 and Maven)
+* Clone repository
+* cd into folder.
+* Run ./mvnw spring-boot:run
+* Navigate to http://localhost:8080
+* Make Searches: eg "Bos", "Rhode Island" etc
 
 ### SearchPage
 ![searchpage](InstantSearch.png)
